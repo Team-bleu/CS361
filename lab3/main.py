@@ -29,6 +29,7 @@ class MainTests(unittest.TestCase):
     
     self.assertEqual(rational2 - rational1, 1)
     self.assertEqual(rational3 - rational1, 2)
+    self.assertEqual(rational5 - rational4, 1/3)
  
   def test_mul(self):
     
@@ -50,6 +51,8 @@ class MainTests(unittest.TestCase):
     self.assertEqual(str(rational2), "3/1")
     self.assertEqual(str(rational1), "2/1")
     self.assertEqual(str(rational3), "4/1")
+    self.assertEqual(str(rational4), "1/3")
+    self.assertEqual(str(rational5), "2/3")
 
   def test_float(self):
     
@@ -57,7 +60,6 @@ class MainTests(unittest.TestCase):
     self.assertEqual(float(rational2), 3.0)
     self.assertEqual(float(rational3), 4.0)
 
-#print("kkkkkkk")
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(MainTests))
 runner = unittest.TextTestRunner()
