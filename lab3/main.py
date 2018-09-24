@@ -35,6 +35,8 @@ class MainTests(unittest.TestCase):
     
     self.assertEqual(rational1 * rational2, 6)
     self.assertEqual(rational1 * rational3, 8)
+    self.assertEqual(rational2 * rational3, 12)
+    self.assertEqual(rational4 * rational5, 2/9)
     
   def test_div(self):
     
