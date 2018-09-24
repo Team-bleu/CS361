@@ -33,11 +33,18 @@ class MainTests(unittest.TestCase):
     
     self.assertEqual(rational1 * rational2, 6)
     self.assertEqual(rational1 * rational3, 8)
+    
   def test_div(self):
     
     self.assertEqual(rational2 / rational1, 3/2)
     self.assertEqual(rational3 / rational1, 2)
+    self.assertEqual(rational3 / 0, 
+  
+  # Cannot divide by zero                   
+  def test_div_zero(self):
 
+    self.assertEqual(rational3 / 0, ZeroDivisionError)
+                     
   def test_str(self):
     
     self.assertEqual(str(rational2), "3/1")
