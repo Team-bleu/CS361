@@ -38,7 +38,6 @@ class MainTests(unittest.TestCase):
     
     self.assertEqual(rational2 / rational1, 3/2)
     self.assertEqual(rational3 / rational1, 2)
-    self.assertEqual(rational3 / 0, 
   
   # Cannot divide by zero                   
   def test_div_zero(self):
