@@ -2,6 +2,7 @@ import unittest
 
 from Rational import Rational
 
+rational0 = Rational(0,0)
 rational1 = Rational(2,1)
 rational2 = Rational(3,1)
 rational3 = Rational(4,1)
@@ -42,7 +43,7 @@ class MainTests(unittest.TestCase):
   # Cannot divide by zero                   
   def test_div_zero(self):
 
-    self.assertEqual(rational3 / 0, ZeroDivisionError)
+    self.assertEqual(rational3 / rational0, ZeroDivisionError)
                      
   def test_str(self):
     
