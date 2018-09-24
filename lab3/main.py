@@ -8,6 +8,7 @@ rational2 = Rational(3,1)
 rational3 = Rational(4,1)
 rational4 = Rational(1,3)
 rational5 = Rational(2,3)
+rational6 = Rational(3,9)
 
 #print(rational1.__dict__)
 #print(rational2.__dict__)
