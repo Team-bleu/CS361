@@ -8,6 +8,7 @@ rational2 = Rational(3,1)
 rational3 = Rational(4,1)
 rational4 = Rational(1,3)
 rational5 = Rational(2,3)
+rational6 = Rational(3,9)
 
 #print(rational1.__dict__)
 #print(rational2.__dict__)
@@ -61,6 +62,26 @@ class MainTests(unittest.TestCase):
     self.assertEqual(float(rational1), 2.0)
     self.assertEqual(float(rational2), 3.0)
     self.assertEqual(float(rational3), 4.0)
+    
+  # Tests the Closure Property of Rational Numbers
+  def test_closure(self):
+
+    self.assertEqual(rational6, 1/3)
+
+  # Tests the Commutative Property of Rational Numbers
+  def test_commutative(self):
+
+    self.assertEqual(rational1 + rational4, rational4 + rational1)
+
+  # Tests the Associative Property of Rational Numbers
+  def test_associative(self):
+
+    self.assertEqual(rational1 + (rational2 + rational3), 9)
+
+  # Tests the Additive Identity of Rational Numbers
+  def test_additive(self):
+
+    self.assertEqual(rational1 + rational0, rational1)
 
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(MainTests))
