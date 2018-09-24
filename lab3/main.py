@@ -22,6 +22,7 @@ class MainTests(unittest.TestCase):
   
     self.assertEqual(rational1 + rational2, 5)
     self.assertEqual(rational1 + rational3, 6)
+    self.assertEqual(rational4 + rational5, 1)
   
   def test_sub(self):
     
