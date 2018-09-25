@@ -19,6 +19,16 @@ class MainTests(unittest.TestCase):
     self.assertEqual(rational3, 4/1)
     self.assertEqual(rational2, 3/1)
     self.assertEqual(rational4, 1/3)
+    
+  # Tests the initialization of a zero denominator  
+  def test_init_zero_denom(self):
+    
+    self.assertEqual(rational(3,0), ZeroDivisionError)
+    
+  # Tests the initialization of a negative denominator (e.g. 3/-5 == -3/5)
+  def test_init_neg(self):
+    
+    self.assertEqual(rational(3, -5), -3/5);
 
   def test_add(self):
   
