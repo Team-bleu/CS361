@@ -1,5 +1,6 @@
 import unittest
 
+from test_add import testAdd
 from Rational import Rational
 
 rational1 = Rational(2,1)
@@ -11,7 +12,7 @@ rational6 = Rational(3,9)
 
 class MainTests(unittest.TestCase):
 
-  # THE TESTS BELOW TESTS THE METHODS INDIVIDUALLY
+# THE TESTS BELOW TESTS THE METHODS INDIVIDUALLY
   def test_init(self):
     self.assertEqual(rational3, 4/1)
     self.assertEqual(rational2, 3/1)
@@ -84,8 +85,29 @@ class MainTests(unittest.TestCase):
   def test_init_neg_rationals(self):
     self.assertEqual(Rational(4, -5), Rational(-4, 5))
 
+   # Tests the initializatoin of numerators
+  def test_init_num(self):
+    self.assertEqual(rational1.n, 2)
+    self.assertEqual(rational2.n, 3)
+
+  # Tests the initialization of denominators
+  def test_init_denom(self):
+    self.assertEqual(rational1.d, 1)
+    self.assertEqual(rational2.d, 1)
+
+  # Tests the initialization of non-numeric numberators
+  def test_init_num_symbol(self):
+    with self.assertRaises(ValueError):
+      Rational("a",3)
+
+  # Tests the initialization of non-numeric denominators
+  def test_init_denom_symbol(self):
+    with self.assertRaises(ValueError):
+      Rational(2,"b")
+
+
 suite = unittest.TestSuite()
-suite.addTest(unittest.makeSuite(MainTests))
+suite.addTest(unittest.makeSuite(testAdd))
 runner = unittest.TextTestRunner()
 res=runner.run(suite)
 #print(res)
