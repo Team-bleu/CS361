@@ -9,7 +9,7 @@ rational4 = Rational(1,3)
 rational5 = Rational(2,3)
 rational6 = Rational(3,9)
 
-class testAdd(unittest.TestCase):
+class testInit(unittest.TestCase):
     def test_init(self):
         self.assertEqual(rational3, 4 / 1)
         self.assertEqual(rational2, 3 / 1)
