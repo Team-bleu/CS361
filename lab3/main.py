@@ -41,7 +41,7 @@ class MainTests(unittest.TestCase):
   # Cannot divide by zero                   
   def test_div_zero(self):
     with self.assertRaises(ZeroDivisionError):
-      rational3 / 0
+      self.assertEqual(rational3 / 0)
                      
   def test_str(self):
     self.assertEqual(str(rational2), "3/1")
@@ -76,7 +76,7 @@ class MainTests(unittest.TestCase):
   # Tests the initialization of a zero denominator  
   def test_init_zero_denom(self):
     with self.assertRaises(ZeroDivisionError):
-      Rational(3,0)
+      self.assertEqual(Rational(3,0))
     
   # Tests the initialization of a negative denominator (e.g. 3/-5 == -3/5)
   def test_init_neg(self):

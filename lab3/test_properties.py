@@ -9,7 +9,7 @@ rational4 = Rational(1,3)
 rational5 = Rational(2,3)
 rational6 = Rational(3,9)
 
-class testAdd(unittest.TestCase):
+class testProperties(unittest.TestCase):
     # THE TESTS BELOW TESTS THE PROPERTIES OF RATIONAL NUMBERS
     # Tests the Closure Property of Rational Numbers
     def test_closure(self):

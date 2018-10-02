@@ -9,7 +9,7 @@ rational4 = Rational(1,3)
 rational5 = Rational(2,3)
 rational6 = Rational(3,9)
 
-class testAdd(unittest.TestCase):
+class testMul(unittest.TestCase):
     def test_mul(self):
         self.assertEqual(rational1 * rational2, 6)
         self.assertEqual(rational1 * rational3, 8)
