@@ -1,20 +1,5 @@
 import unittest
 
-users = []
-
-
-class User:
-    def __init__(self, username, password):
-        self.username = username
-        self.password = password
-
-    def add_user(self):
-        new_user = {}
-        new_user['username'] = self.username
-        new_user['password'] = self.password
-        users.append(new_user)
-
-
 def prompt():
     user_input = input("\nType add <username> <password>\n")
     user_input_parse = user_input.split(" ")
