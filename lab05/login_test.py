@@ -1,16 +1,18 @@
 import unittest
-
-users = [{"username": "Joe", "password": "1234", "current": "None"},
-         {"username": "Sarah", "password": "abcd", "current": "None"}]
-
-# prints the dictionary of users
-print("dictionary of users are, ", users)
+import User
 
 
 class LoginTest(unittest.TestCase):
     def test_login(self):
-        login = "login"
+        users = [{"username": "Joe", "password": "1234", "current": False},
+                 {"username": "Sarah", "password": "abcd", "current": False}]
+
+        # prints the dictionary of users
+        print("\ndictionary of users are, ", users)
 
         for each_user in users:
-            self.assertEqual(command(login + each_user["username"] + each_user["password"]),
-                             each_user["username"] + " logged in")
+            user = User.User(each_user["username"], each_user["password"])
+            user.add_user()
+
+        self.assertEqual(user.command("login " + users[0].get("username") + " " + users[0].get("password")),
+                         users[0].get("username") + " logged in")

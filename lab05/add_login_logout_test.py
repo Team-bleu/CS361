@@ -16,23 +16,23 @@ class AddLoginLogoutTest(unittest.TestCase):
             # prompts for new user
             user_input_list = prompt()
             print("user_input_list = ", user_input_list)
+            if user_input_list[0] != "add":
+                print("You have to add a user and password")
 
         # adds the user into the dictionary
         user = User.User(user_input_list[1], user_input_list[2])
         user.add_user()
         print("users = ", user.get_users())
 
-        add = "add"
-
-        print("\ninput is: ", add, user.get_users()[0].get("username"), user.get_users()[0].get("password"))
-        self.assertEqual(user.command("add" + user.get_users()[0].get("username")
+        print("\ninput is: add ", user.get_users()[0].get("username"), user.get_users()[0].get("password"))
+        self.assertEqual(user.command("add " + user.get_users()[0].get("username") + " "
                                       + user.get_users()[0].get("password")),
                          "User " + user.get_users()[0].get("username") + " added")
 
-        self.assertEqual(user.command("login" + user.get_users()[0].get("username")
+        self.assertEqual(user.command("login " + user.get_users()[0].get("username") + " "
                                       + user.get_users()[0].get("password")),
                          user.get_users()[0].get("username") + " logged in")
         self.assertTrue(user.get_users()[0].get("current", True))
 
-        User.command("logout")
-        self.assertEqual(user.get_users()[0].get("current"), "None")
+        user.command("logout")
+        self.assertEqual(user.get_current(), "None")
