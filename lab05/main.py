@@ -1,15 +1,22 @@
-import unittest
+import main_tests
+import User
 
-from add_test import AddTest
-from login_test import LoginTest
-from logout_test import LogoutTest
-from add_login_logout_test import AddLoginLogoutTest
 
-suite = unittest.TestSuite()
-suite.addTest(unittest.makeSuite(AddTest))
-suite.addTest(unittest.makeSuite(LoginTest))
-suite.addTest(unittest.makeSuite(LogoutTest))
-suite.addTest(unittest.makeSuite(AddLoginLogoutTest))
-runner = unittest.TextTestRunner()
-res = runner.run(suite)
-print(res)
+def main():
+
+    # Should we check the Acceptance Tests?
+    test = True
+    # Stores user input
+    user_input = [""]
+
+    if test:
+        main_tests.main_tests()
+
+    while user_input[0] != "quit":
+        user_input = input()
+        user = User(user_input)
+        user.command(user_input)
+
+
+if __name__ == "__main__":
+    main()
